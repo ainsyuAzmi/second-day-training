@@ -7,11 +7,17 @@ use App\Blog;
 
 class PublicController extends Controller
 {
-    public function index(){
+    
         public function index()
         {
             $blogs = Blog::all();
-            return view('blogs.show')->with(compact('blog'));
+            //dd($blogs);
+            return view('template.home')->with(compact('blogs'));
         }
-    }
+
+        public function show(Blog $blog)
+        {
+            return view('template.post')->with(compact('blog'));
+        }
+    
 }

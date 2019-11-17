@@ -35,6 +35,7 @@
                                     <tr>
                                         <td>{{ $blog->id}}</td>
                                         <td>{{ $blog->title}}</td>
+                                        <td>{{ $blog->body}}</td>
                                         <td>{{ $blog->created_at->diffForHumans()}}</td>
                                         <td>{{ $blog->author}}</td>
                                         <td>

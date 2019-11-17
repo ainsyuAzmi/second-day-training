@@ -49,6 +49,7 @@
     </div>
   </nav>
 
+
   <!-- Header -->
   <header class="masthead">
     <div class="container d-flex h-100 align-items-center">
@@ -75,7 +76,7 @@
   </section>
 
 
-
+@foreach($blogs as $blog)
   <!-- Projects Section -->
   <section id="projects" class="projects-section bg-light">
     <div class="container">
@@ -87,50 +88,14 @@
         </div>
         <div class="col-xl-4 col-lg-5">
           <div class="featured-text text-center text-lg-left">
-            <h4>The beginning</h4>
-            <p class="text-black-50 mb-0">Start with day 1, learning how to CRUD with Laravel. Day 2, learnt authenticating and verifying emails. Learnt how to clone git and how to deploy IP Address of localhost along with port number using Laravel.</p>
+            <h4>{{ $blog->title}}</h4>
+            <p class="text-black-50 mb-0">{{ $blog->body}}</p>
+            <p class="text-black-50 mb-0">{{ $blog->created_at->diffForHumans()}}</p>
           </div>
         </div>
       </div>
-
-      <!-- Project One Row -->
-      <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
-        <div class="col-lg-6">
-          <img class="img-fluid" src="img/demo-image-01.jpg" alt="">
-        </div>
-        <div class="col-lg-6">
-          <div class="bg-black text-center h-100 project">
-            <div class="d-flex h-100">
-              <div class="project-text w-100 my-auto text-center text-lg-left">
-                <h4 class="text-white">Day 2</h4>
-                <p class="mb-0 text-white-50">An example of where you can put an image of a project, or anything else, along with a description.</p>
-                <hr class="d-none d-lg-block mb-0 ml-0">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project Two Row -->
-      <div class="row justify-content-center no-gutters">
-        <div class="col-lg-6">
-          <img class="img-fluid" src="img/demo-image-02.jpg" alt="">
-        </div>
-        <div class="col-lg-6 order-lg-first">
-          <div class="bg-black text-center h-100 project">
-            <div class="d-flex h-100">
-              <div class="project-text w-100 my-auto text-center text-lg-right">
-                <h4 class="text-white">D-Day</h4>
-                <p class="mb-0 text-white-50">Another example of a project with its respective description. These sections work well responsively as well, try this theme on a small screen!</p>
-                <hr class="d-none d-lg-block mb-0 mr-0">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
   </section>
+@endforeach
 
   <!-- Signup Section -->
   <section id="signup" class="signup-section">
